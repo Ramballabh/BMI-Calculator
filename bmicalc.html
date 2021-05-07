@@ -14,18 +14,18 @@
         <div class="card">
             <div class="card-header text-center">BMI Calculator</div>
             <div class="card-body">
-                <form class="w-50-m-auto">
+                <form class="w-50-m-auto" onsubmit="return false">
                     <div class="form-group">
                         <label>Weight: </label>
-                        <input type="number" name = "" id="Weight" class="form-control">
+                        <input type="number" name = "" placeholder="Weight in kg" id="Weight" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Height: </label>
-                        <input type="number" name = "" id="Height" class="form-control">
+                        <input type="text" name = "" placeholder="Height in feet" id="Height" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>BMI Value: </label>
-                        <input type="number" name = "" id="weight" class="form-control">
+                        <input type="number" name = "" id="bmivalue" class="form-control">
                     </div>
                     <div>
                         <button type="submit" class="btn btn-success" onclick=getbmivalue()>Check BMI</button>
@@ -40,7 +40,10 @@
         function getbmivalue(){
             var weight = document.getElementById('Weight').value;
             var height = document.getElementById('Height').value;
-            
+            height = height * 12 * 0.025;
+            var newbmivalue = weight / (height*height);
+            newbmivalue = Math.round(newbmivalue);
+            document.getElementById('bmivalue').value = newbmivalue;
         }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
