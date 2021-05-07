@@ -14,15 +14,35 @@
         <div class="card">
             <div class="card-header text-center">BMI Calculator</div>
             <div class="card-body">
-                <form>
+                <form class="w-50-m-auto">
                     <div class="form-group">
-
+                        <label>Weight: </label>
+                        <input type="number" name = "" id="Weight" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Height: </label>
+                        <input type="number" name = "" id="Height" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>BMI Value: </label>
+                        <input type="number" name = "" id="weight" class="form-control">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success" onclick=getbmivalue()>Check BMI</button>
                     </div>
                 </form>
             </div>
-            <div class="card-footer text-center"></div>
+            <div class="card-footer text-center">A healthy BMI ranges between 19 and 25</div>
         </div>
     </div>
+    <script>
+        
+        function getbmivalue(){
+            var weight = document.getElementById('Weight').value;
+            var height = document.getElementById('Height').value;
+            
+        }
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
